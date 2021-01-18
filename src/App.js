@@ -31,9 +31,16 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
   },
+  heroContentBody: {
+    backgroundImage: "url('/purple-clouds-header.jpg')",
+    maxWidth: "1024px",
+    backgroundSize: "100%",
+    height: "640px",
+    paddingLeft: "0",
+    paddingRight: "0",
+  },
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(0, 0, 0),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -59,54 +66,71 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1, 2, 3];
 
 const App = () => {
   const classes = useStyles();
 
   return (
     <React.Fragment>
-      <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <main>
         {/* Hero unit */}
+        <CssBaseline />
+
         <div className={classes.heroContent}>
-          <Container maxWidth="sm">
+          <Container maxWidth="sm" className={classes.heroContentBody}>
+            <AppBar position="relative">
+              <Toolbar>
+                <Typography variant="h6" color="inherit" noWrap>
+                  CR/
+                </Typography>
+                <Typography className={classes.root}>
+                  <Link
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                    color="inherit"
+                  >
+                    hello
+                  </Link>
+                  <Link
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                    color="inherit"
+                  >
+                    hello
+                  </Link>
+                  <Link
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                    color="inherit"
+                  >
+                    hello
+                  </Link>
+                </Typography>
+              </Toolbar>
+            </AppBar>
             <Typography
               component="h1"
               variant="h2"
-              align="center"
+              align="left"
               color="textPrimary"
               gutterBottom
             >
-              Album layout
+              This is going to be the heading
             </Typography>
             <Typography
               variant="h5"
-              align="center"
+              align="left"
               color="textSecondary"
               paragraph
             >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
+              Here is going to be the subheading.
             </Typography>
             <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
+              <Grid container spacing={2} justify="left">
                 <Grid item>
                   <Button variant="outlined" color="primary">
-                    Secondary action
+                    Contact
                   </Button>
                 </Grid>
               </Grid>
