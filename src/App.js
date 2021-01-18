@@ -1,6 +1,3 @@
-import logo from "./logo.svg";
-import "./App.css";
-
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
