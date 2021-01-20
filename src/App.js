@@ -28,8 +28,22 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
+  appBarHeight: {
+    height: "98px",
+  },
+  nav: {},
+  toolbar: {
+    color: "#fff",
+  },
   icon: {
     marginRight: theme.spacing(2),
+  },
+  heroWindow: {
+    backgroundColor: "#ffffff52",
+    margin: "0 68px",
+    borderRadius: "18px",
+    color: "#fff",
+    padding: "135px 0 0 84px",
   },
   heroContentBody: {
     backgroundImage: "url('/purple-clouds-header.jpg')",
@@ -79,61 +93,59 @@ const App = () => {
 
         <div className={classes.heroContent}>
           <Container maxWidth="sm" className={classes.heroContentBody}>
-            <AppBar position="relative">
-              <Toolbar>
+            <AppBar
+              position="relative"
+              color="transparent"
+              elevation={0}
+              className={classes.appBarHeight}
+            >
+              <Toolbar className={classes.toolbar}>
                 <Typography variant="h6" color="inherit" noWrap>
                   CR/
                 </Typography>
-                <Typography className={classes.root}>
-                  <Link
-                    href="#"
-                    onClick={(e) => e.preventDefault()}
-                    color="inherit"
-                  >
-                    hello
-                  </Link>
-                  <Link
-                    href="#"
-                    onClick={(e) => e.preventDefault()}
-                    color="inherit"
-                  >
-                    hello
-                  </Link>
-                  <Link
-                    href="#"
-                    onClick={(e) => e.preventDefault()}
-                    color="inherit"
-                  >
-                    hello
-                  </Link>
-                </Typography>
+                <div className={classes.nav}>
+                  <Typography className={classes.root}>
+                    <Link
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      color="inherit"
+                    >
+                      Service
+                    </Link>
+                    <Link
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      color="inherit"
+                    >
+                      About
+                    </Link>
+                    <Link
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      color="inherit"
+                    >
+                      Contact
+                    </Link>
+                  </Typography>
+                </div>
               </Toolbar>
             </AppBar>
-            <Typography
-              component="h1"
-              variant="h2"
-              align="left"
-              color="textPrimary"
-              gutterBottom
-            >
-              This is going to be the heading
-            </Typography>
-            <Typography
-              variant="h5"
-              align="left"
-              color="textSecondary"
-              paragraph
-            >
-              Here is going to be the subheading.
-            </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="left">
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Contact
-                  </Button>
+            <div className={classes.heroWindow}>
+              <Typography component="h1" variant="h2" align="left" gutterBottom>
+                This is going to be the heading
+              </Typography>
+              <Typography variant="h5" align="left" paragraph>
+                Here is going to be the subheading.
+              </Typography>
+              <div className={classes.heroButtons}>
+                <Grid container spacing={2} justify="left">
+                  <Grid item>
+                    <Button variant="outlined" color="primary">
+                      Contact
+                    </Button>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </div>
             </div>
           </Container>
         </div>
