@@ -22,7 +22,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Camille Roch
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4];
+const cards = [1, 2, 3];
 
 const App = () => {
   const classes = useStyles();
