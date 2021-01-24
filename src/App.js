@@ -12,6 +12,10 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
+import { createMuiTheme } from "@material-ui/core/styles";
+import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
+
+import "./App.css";
 
 function Copyright() {
   return (
@@ -27,6 +31,9 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    fontFamily: "times",
+  },
   appBarHeight: {
     height: "98px",
   },
@@ -83,10 +90,14 @@ const cards = [1, 2, 3, 4];
 
 const App = () => {
   const classes = useStyles();
-
+  const theme = createMuiTheme({
+    typography: {
+      fontFamily: ['"times"'].join(","),
+    },
+  });
   return (
-    <React.Fragment>
-      <main>
+    <MuiThemeProvider theme={theme}>
+      <main className={classes.container}>
         {/* Hero unit */}
         <CssBaseline />
 
@@ -198,7 +209,7 @@ const App = () => {
         <Copyright />
       </footer>
       {/* End footer */}
-    </React.Fragment>
+    </MuiThemeProvider>
   );
 };
 
