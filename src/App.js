@@ -31,31 +31,38 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    fontFamily: "times",
-  },
+  root: {},
   appBarHeight: {
     height: "98px",
   },
-  nav: {},
+  nav: {
+    width: "500px",
+  },
+  navLink: {
+    display: "inline-block",
+    padding: "6px",
+  },
   toolbar: {
     color: "#fff",
+    display: "flex",
+    alignContent: "center",
   },
   icon: {
     marginRight: theme.spacing(2),
   },
   heroWindow: {
+    // [theme.breakpoints.up("sm")]: {
+    //   backgroundColor: "green",
+    // },
     backgroundColor: "#ffffff52",
-    margin: "0 68px",
     borderRadius: "18px",
     color: "#fff",
-    padding: "135px 0 0 84px",
+    padding: "0",
   },
   heroContentBody: {
     backgroundImage: "url('/purple-clouds-header.jpg')",
     maxWidth: "1024px",
     backgroundSize: "100%",
-    height: "640px",
     paddingLeft: "0",
     paddingRight: "0",
   },
@@ -91,13 +98,22 @@ const cards = [1, 2, 3];
 const App = () => {
   const classes = useStyles();
   const theme = createMuiTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 960,
+        lg: 1280,
+        xl: 1920,
+      },
+    },
     typography: {
       fontFamily: ['"Nunito"'].join(","),
     },
   });
   return (
     <MuiThemeProvider theme={theme}>
-      <main className={classes.container}>
+      <main className={classes.root}>
         {/* Hero unit */}
         <CssBaseline />
 
@@ -110,34 +126,41 @@ const App = () => {
               className={classes.appBarHeight}
             >
               <Toolbar className={classes.toolbar}>
-                <Typography variant="h6" color="inherit" noWrap>
-                  CR/
-                </Typography>
-                <div className={classes.nav}>
-                  <Typography className={classes.root}>
-                    <Link
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                      color="inherit"
-                    >
-                      Service
-                    </Link>
-                    <Link
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                      color="inherit"
-                    >
-                      About
-                    </Link>
-                    <Link
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                      color="inherit"
-                    >
-                      Contact
-                    </Link>
-                  </Typography>
-                </div>
+                <Grid container justify="space-between" spacing={24}>
+                  <Grid item>
+                    <Typography variant="h6" color="inherit" noWrap>
+                      CR/
+                    </Typography>
+                  </Grid>
+                  <Grid>
+                    <Typography className={classes.root}>
+                      <Link
+                        className={classes.navLink}
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        color="inherit"
+                      >
+                        Service
+                      </Link>
+                      <Link
+                        className={classes.navLink}
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        color="inherit"
+                      >
+                        About
+                      </Link>
+                      <Link
+                        className={classes.navLink}
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        color="inherit"
+                      >
+                        Contact
+                      </Link>
+                    </Typography>
+                  </Grid>
+                </Grid>
               </Toolbar>
             </AppBar>
             <div className={classes.heroWindow}>
