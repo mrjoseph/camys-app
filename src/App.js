@@ -92,7 +92,7 @@ const App = () => {
   const classes = useStyles();
   const theme = createMuiTheme({
     typography: {
-      fontFamily: ['"times"'].join(","),
+      fontFamily: ['"Nunito"'].join(","),
     },
   });
   return (
