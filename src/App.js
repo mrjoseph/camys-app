@@ -16,222 +16,226 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 
 import "./App.css";
+import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Camille Roch
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
-  appBarHeight: {
-    height: "98px",
-  },
-  nav: {
-    width: "500px",
-  },
-  navLink: {
-    display: "inline-block",
-    padding: "6px",
-  },
-  toolbar: {
+ root:{},
+ appBar:{
+  '& a': {
     color: "#fff",
-    display: "flex",
-    alignContent: "center",
+    '&:hover':{
+      color:"#D77F90",
+      transitionDuration: "0.2s",
+    },
+   },
+   backgroundColor: "transparent",
+   paddingLeft: "30px",
+   paddingRight: "16px",
+   fontSize: "22px",
+ },
+ appBackground:{
+   backgroundImage: "url('/01.-Royal-Heath.jpg')",
+   backgroundSize: "100%",
+ },
+
+logo:{
+  fontSize: "26px",
+  
+},
+
+ heroContent: {
+  background: "rgba( 255, 255, 255, 0.30 )",
+  boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+  backdropFilter: "blur( 8.0px )",
+  "-webkit-backdrop-filter": "blur( 8.0px )",
+  borderRadius: "10px",
+  border: "1px solid rgba( 255, 255, 255, 0.18 )",
+  margin: "60px 55px",
+  padding: "100px 64px",
+  color: "#FFFFFF",
+ },
+
+ hero:{
+   padding: "0 0 99px",
+ },
+
+ h1:{ 
+   fontWeight: "400",
+ },
+
+ heroButton: {
+  '& a': {
+   color: "#fff",
   },
-  icon: {
-    marginRight: theme.spacing(2),
+  display:"inline-block",
+  width: "150px",
+  marginTop:"15px",
+  padding:"8px 25px",
+  backgroundColor: "#D0475B",
+  borderRadius: "200px",
+  textAlign: "center",
+  fontSize: "18px",
+  textDecoration: "none",
+  '&:hover': {
+   backgroundColor: "#c33247",
+   boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)",
+   cursor: 'pointer',
+   transitionDuration: "0.2s",
+ },
+ '&:visited': {
+   color: "#fff",
+ }},
+
+
+ content:{
+  padding: "50px",
+  color: "#151A3A",
   },
-  heroWindow: {
-    // [theme.breakpoints.up("sm")]: {
-    //   backgroundColor: "green",
-    // },
-    backgroundColor: "#ffffff52",
-    borderRadius: "18px",
-    color: "#fff",
-    padding: "0",
-  },
-  heroContentBody: {
-    backgroundImage: "url('/purple-clouds-header.jpg')",
-    maxWidth: "1024px",
-    backgroundSize: "100%",
-    paddingLeft: "0",
-    paddingRight: "0",
-  },
-  heroContent: {
-    padding: theme.spacing(0, 0, 0),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-  },
-  cardMedia: {
-    paddingTop: "56.25%", // 16:9
-  },
-  cardContent: {
-    flexGrow: 1,
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
+
+h2Content:{
+  marginBottom: "30px",
+},
+
+
+ about:{
+  padding: "40px",
+  background: "white",
+  color: "#151A3A",
+  textAlign: "justify",
+  margin: "30px 70px",
+},
+
+ contact:{
+  padding: "40px",
+  color: "#151A3A",
+  '& a': {
+    color: "#D77F90",
+ } },
+
+ h3Contact:{
+   color: "#D77F90",
+   marginBottom: "20px",
+ },
+
+ footer:{},
+
+
 }));
+const cardsArray = [
+  {
+    title:"Service1", 
+    description:"here is the description"
+  },
+  {
+    title:"Service1", 
+    description:"here is the description"
+  },
+  {
+    title:"Service1", 
+    description:"here is the description"
+  },
+];
+const content = {
+  about: {
+    description: `There is no denying the fact that the success of an advertisement
+    lies mostly in the headline. The headline should attract the reader and make 
+    him read the rest of the advertisement. The headline should be simply catchy 
+    and various key points should be embedded when deciding on the headline for the ad.`,
+  }
+};
 
-const cards = [1, 2, 3];
-
-const App = () => {
-  const classes = useStyles();
-  const theme = createMuiTheme({
-    breakpoints: {
-      values: {
-        xs: 0,
-        sm: 600,
-        md: 960,
-        lg: 1280,
-        xl: 1920,
-      },
-    },
-    typography: {
-      fontFamily: ['"Nunito"'].join(","),
-    },
-  });
+const CardContainer = (classes) => {
+return (
+  <Grid container justify="space-evenly" spacing={3}>
+    {cardsArray.map((item) => {
   return (
-    <MuiThemeProvider theme={theme}>
-      <main className={classes.root}>
-        {/* Hero unit */}
-        <CssBaseline />
-
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm" className={classes.heroContentBody}>
-            <AppBar
-              position="relative"
-              color="transparent"
-              elevation={0}
-              className={classes.appBarHeight}
-            >
-              <Toolbar className={classes.toolbar}>
-                <Grid container justify="space-between" spacing={24}>
-                  <Grid item>
-                    <Typography variant="h6" color="inherit" noWrap>
-                      CR/
-                    </Typography>
-                  </Grid>
-                  <Grid>
-                    <Typography className={classes.root}>
-                      <Link
-                        className={classes.navLink}
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        color="inherit"
-                      >
-                        Service
-                      </Link>
-                      <Link
-                        className={classes.navLink}
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        color="inherit"
-                      >
-                        About
-                      </Link>
-                      <Link
-                        className={classes.navLink}
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        color="inherit"
-                      >
-                        Contact
-                      </Link>
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Toolbar>
-            </AppBar>
-            <div className={classes.heroWindow}>
-              <Typography component="h1" variant="h2" align="left" gutterBottom>
-                This is going to be the heading
-              </Typography>
-              <Typography variant="h5" align="left" paragraph>
-                Here is going to be the subheading.
-              </Typography>
-              <div className={classes.heroButtons}>
-                <Grid container spacing={2} justify="left">
-                  <Grid item>
-                    <Button variant="outlined" color="primary">
-                      Contact
-                    </Button>
-                  </Grid>
-                </Grid>
-              </div>
-            </div>
-          </Container>
-        </div>
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
+    <Grid item key={item.title} xs={12} sm={4}>
+      <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
                     image="https://source.unsplash.com/random"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                    <Typography gutterBottom variant="h5" component="h3">
+                      {item.title}
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
+                     {item.description}
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
+                
                 </Card>
-              </Grid>
-            ))}
+      </Grid>
+  )
+}) }
+  </Grid>
+)
+};
+
+const App = () => {
+  const classes = useStyles();
+  const theme = createMuiTheme({
+    typography: {
+      fontFamily: ['"Montserrat"'].join(","),
+    },
+  });
+  return (
+    <MuiThemeProvider theme={theme}>
+      <main className={classes.container}>
+        {/* Hero unit */}
+        <CssBaseline />       
+      </main>   
+      <Container>
+        
+<div className={classes.appBackground}>
+<AppBar
+        position="relative"
+        elevation={0}
+        className={classes.appBar}>
+          <Toolbar>
+          <Grid container direction="row" xs={6}>
+            <Grid item><Typography className={classes.logo}>CR/</Typography></Grid>
           </Grid>
-        </Container>
-      </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </footer>
-      {/* End footer */}
+          <Grid container direction="row" justify="flex-end" spacing={2} xs={6}>
+            <Grid item><Link href="#">Services</Link></Grid>
+            <Grid item ><Link href="#">About</Link></Grid>
+            <Grid item><Link href="#">Contact</Link></Grid>
+          </Grid>
+          </Toolbar>
+          
+         
+          </AppBar>
+          <div className={classes.hero}>
+          <div className={classes.heroContent}>
+            <Typography className={classes.h1} component="h1" variant="h2" align="left" >Heading</Typography>
+            <Typography component="p" variant="h4">This is going to be the subheading</Typography>
+            <Typography className={classes.heroButton}><Link className={classes.linkButton} href="#">CONTACT</Link></Typography>
+            </div>
+          </div>
+          </div>
+          <div className={classes.content}>
+  
+            <Container>
+      
+            <Typography component="h2" variant="h3" className={classes.h2Content}>This is going to be the h2</Typography>
+              <CardContainer classes={classes.CardContainer}/>
+            </Container>
+          </div>
+
+          <div className={classes.about}>
+          <Typography component="h2" variant="h3" align="center" gutterBottom={true}>About</Typography>
+          <Typography component="p" align="center">{content.about.description}</Typography>
+          </div>
+          <div className={classes.contact}>
+          <Typography component="h2" variant="h3" align="center" gutterBottom={true}>Contact</Typography>
+          <Typography component="h3" variant="h4" align="center" gutterBottom={true} className={classes.h3Contact}>Get in touch with me</Typography>
+          <Typography component="p" align="center">There is no denying the fact that the success of an advertisement lies mostly in the headline.</Typography>
+          <Typography component="p" align="center"><Link href="#">email@me.com</Link></Typography>
+          </div>
+          <div className={classes.footer}></div>
+          </Container>  
     </MuiThemeProvider>
   );
 };
