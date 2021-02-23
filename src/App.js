@@ -21,22 +21,26 @@ import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
  root:{},
- appBar:{
+  appBar: {
+    display:"flex",
+   padding: '0',
   '& a': {
     color: "#fff",
+    margin: '0 0 0 20px',
+    padding: '0',
     '&:hover':{
       color:"#D77F90",
       transitionDuration: "0.2s",
     },
    },
    backgroundColor: "transparent",
-   paddingLeft: "30px",
-   paddingRight: "16px",
-   fontSize: "22px",
+    fontSize: "18px",
+   padding: '24px 0 16px 0',
  },
  appBackground:{
    backgroundImage: "url('/01.-Royal-Heath.jpg')",
    backgroundSize: "100%",
+   "padding-bottom": "60px",
  },
 
 logo:{
@@ -51,7 +55,6 @@ logo:{
   "-webkit-backdrop-filter": "blur( 8.0px )",
   borderRadius: "10px",
   border: "1px solid rgba( 255, 255, 255, 0.18 )",
-  margin: "60px 55px",
   padding: "100px 64px",
   color: "#FFFFFF",
  },
@@ -182,20 +185,16 @@ const App = () => {
     },
   });
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme} >
       <main className={classes.container}>
         {/* Hero unit */}
         <CssBaseline />       
       </main>   
-      <Container>
+      <Container maxWidth={false} disableGutters>
         
-<div className={classes.appBackground}>
-<AppBar
-        position="relative"
-        elevation={0}
-        className={classes.appBar}>
-          <Toolbar>
-          <Grid container direction="row" xs={6}>
+        <div className={classes.appBackground}>
+          <Container disableGutters maxWidth="md" className={classes.appBar} >
+          <Grid direction="row" xs={6}>
             <Grid item><Typography className={classes.logo}>CR/</Typography></Grid>
           </Grid>
           <Grid container direction="row" justify="flex-end" spacing={2} xs={6}>
@@ -203,26 +202,22 @@ const App = () => {
             <Grid item ><Link href="#">About</Link></Grid>
             <Grid item><Link href="#">Contact</Link></Grid>
           </Grid>
-          </Toolbar>
-          
-         
-          </AppBar>
-          <div className={classes.hero}>
+            </Container>
+          <Container disableGutters maxWidth="md">
           <div className={classes.heroContent}>
             <Typography className={classes.h1} component="h1" variant="h2" align="left" >Heading</Typography>
             <Typography component="p" variant="h4">This is going to be the subheading</Typography>
             <Typography className={classes.heroButton}><Link className={classes.linkButton} href="#">CONTACT</Link></Typography>
             </div>
+          </Container>
           </div>
-          </div>
-          <div className={classes.content}>
+       
   
-            <Container>
-      
+            <Container maxWidth="md">
             <Typography component="h2" variant="h3" className={classes.h2Content}>This is going to be the h2</Typography>
               <CardContainer classes={classes.CardContainer}/>
-            </Container>
-          </div>
+        
+      
 
           <div className={classes.about}>
           <Typography component="h2" variant="h3" align="center" gutterBottom={true}>About</Typography>
@@ -235,6 +230,7 @@ const App = () => {
           <Typography component="p" align="center"><Link href="#">email@me.com</Link></Typography>
           </div>
           <div className={classes.footer}></div>
+          </Container>
           </Container>  
     </MuiThemeProvider>
   );
