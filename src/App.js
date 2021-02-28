@@ -53,16 +53,12 @@ const App = () => {
           <Nav classes={classes} content={content}/>
           <Hero classes={classes} content={content}/>
         </Box>
-
         <Container maxWidth="md">
-          <Box mb={7}></Box>
           <Box mb={7}>
             <CardContainer classes={classes} theme={theme} content={content} />
           </Box>
-
           <Box mb={7}>
             <About content={content} />
-
             <Contact content={content} />
           </Box>
           <Box className={classes.footer}>empty</Box>
