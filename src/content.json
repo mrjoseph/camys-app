@@ -8,31 +8,31 @@
         }
     },
     "hero": {
-        "title": "Heading",
-        "description": "This is going to be the subheading",
+        "title": "Camille Roch",
+        "description": "Digital marketing & content strategy",
         "link": "CONTACT"
     },
   "about": {
-    "title": "About Camy",
-    "description": "There is no denying the fact that the success of an advertisement lies mostly in the headline. The headline should attract the reader and make him read the rest of the advertisement. The headline should be simply catchy and various key points should be embedded when deciding on the headline for the ad."
+    "title": "About",
+    "description": "Hi, I'm Camille and I'm a Digital Marketing & Content Specialist based in East London. "
   },
   "contact": {
-      "title": "About",
-      "description": "There is no denying the fact that the success of an advertisement lies mostly in the headline.",
-      "email": "email@me.com"
+      "title": "Contact",
+      "description": "Do you want to have a chat or just say hello? Send me an email at the address below:",
+      "email": "camille.a.roch(at)gmail.com"
   },
   "cards": [
     {
-      "title": "Service1",
-      "description": "here is the description"
+      "title": "Web audit",
+      "description": "Full audit of your website and identification of  indexing, crawlability or usability issues that could prevent search engines from indexing your site or offer a poor user experience."
     },
     {
-      "title": "Service1",
-      "description": "here is the description"
+      "title": "SEO optimisation",
+      "description": "Actionable recommendations to improve your SEO strategy, organic rankings and increase the amount of relevant traffic to your website."
     },
     {
-      "title": "Service1",
-      "description": "here is the description"
+      "title": "Content marketing",
+      "description": "Analysing the search landscape for your product and business, identifying  techniques used by your competitors and opportunities to increase your visibility through content gap analysis."
     }
   ]
 }
