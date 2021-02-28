@@ -1,0 +1,19 @@
+{
+  "about": {
+    "description": "There is no denying the fact that the success of an advertisement lies mostly in the headline. The headline should attract the reader and make him read the rest of the advertisement. The headline should be simply catchy and various key points should be embedded when deciding on the headline for the ad."
+  },
+  "cards": [
+    {
+      "title": "Service1",
+      "description": "here is the description"
+    },
+    {
+      "title": "Service1",
+      "description": "here is the description"
+    },
+    {
+      "title": "Service1",
+      "description": "here is the description"
+    }
+  ]
+}
