@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     },
     backgroundColor: "transparent",
     fontSize: "18px",
-    // padding: "24px 0 16px 0",
   },
   appBackground: {
     backgroundImage: "url('/01.-Royal-Heath.jpg')",
@@ -38,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
     "-webkit-backdrop-filter": "blur( 8.0px )",
     borderRadius: "10px",
     border: "1px solid rgba( 255, 255, 255, 0.18 )",
-    // padding: "100px 64px",
     color: "#FFFFFF",
   },
 
@@ -90,7 +88,9 @@ const useStyles = makeStyles((theme) => ({
       color: "#D77F90",
     },
   },
-
+  card: {
+    height: "100%",
+  },
   h3Contact: {
     color: "#D77F90",
     marginBottom: "20px",

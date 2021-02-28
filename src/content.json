@@ -1,38 +1,41 @@
 {
-    "navigation": {
-        "heading": "CR/",
-        "links": {
-            "services": "Services",
-            "about": "About",
-            "contact": "Contact"
-        }
-    },
-    "hero": {
-        "title": "Camille Roch",
-        "description": "Digital marketing & content strategy",
-        "link": "CONTACT"
-    },
+  "navigation": {
+    "heading": "CR/",
+    "links": {
+      "services": "Services",
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "title": "Camille Roch",
+    "description": "Digital marketing & content strategy",
+    "link": "CONTACT"
+  },
   "about": {
     "title": "About",
     "description": "Hi, I'm Camille and I'm a Digital Marketing & Content Specialist based in East London. "
   },
   "contact": {
-      "title": "Contact",
-      "description": "Do you want to have a chat or just say hello? Send me an email at the address below:",
-      "email": "camille.a.roch(at)gmail.com"
+    "title": "Contact",
+    "description": "Do you want to have a chat or just say hello? Send me an email at the address below:",
+    "email": "camille.a.roch(at)gmail.com"
   },
-  "cards": [
-    {
-      "title": "Web audit",
-      "description": "Full audit of your website and identification of  indexing, crawlability or usability issues that could prevent search engines from indexing your site or offer a poor user experience."
-    },
-    {
-      "title": "SEO optimisation",
-      "description": "Actionable recommendations to improve your SEO strategy, organic rankings and increase the amount of relevant traffic to your website."
-    },
-    {
-      "title": "Content marketing",
-      "description": "Analysing the search landscape for your product and business, identifying  techniques used by your competitors and opportunities to increase your visibility through content gap analysis."
-    }
-  ]
+  "cards": {
+    "title": "this is the title for cards",
+    "cardsList": [
+      {
+        "title": "Web audit",
+        "description": "Full audit of your website and identification of  indexing, crawlability or usability issues that could prevent search engines from indexing your site or offer a poor user experience."
+      },
+      {
+        "title": "SEO optimisation",
+        "description": "Actionable recommendations to improve your SEO strategy, organic rankings and increase the amount of relevant traffic to your website."
+      },
+      {
+        "title": "Content marketing",
+        "description": "Analysing the search landscape for your product and business, identifying  techniques used by your competitors and opportunities to increase your visibility through content gap analysis."
+      }
+    ]
+  }
 }
