@@ -19,6 +19,8 @@ import content from "./content.json";
 import "./App.css";
 import CardContainer from "./components/cardContainer";
 import useStyles from "./styles.js";
+import About from "./components/about";
+import Contact from "./components/contact";
 // import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 
 const App = () => {
@@ -113,37 +115,9 @@ const App = () => {
           </Box>
 
           <Box mb={7}>
-            <Box mb={5}>
-              <Typography
-                component="h2"
-                variant="h3"
-                align="center"
-                gutterBottom={true}
-              >
-                About
-              </Typography>
-              <Typography component="p" align="center">
-                {content.about.description}
-              </Typography>
-            </Box>
-            <Box mb={5}>
-              <Typography
-                component="h2"
-                variant="h3"
-                align="center"
-                gutterBottom={true}
-              >
-                Contact
-              </Typography>
+            <About content={content} />
 
-              <Typography component="p" align="center">
-                There is no denying the fact that the success of an
-                advertisement lies mostly in the headline.
-              </Typography>
-              <Typography component="p" align="center">
-                <Link href="#">email@me.com</Link>
-              </Typography>
-            </Box>
+            <Contact content={content} />
           </Box>
           <Box className={classes.footer}>empty</Box>
         </Container>
