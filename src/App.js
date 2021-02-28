@@ -22,6 +22,7 @@ import useStyles from "./styles.js";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Nav from "./components/nav";
+import Hero from './components/hero';
 // import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 
 const App = () => {
@@ -50,32 +51,7 @@ const App = () => {
       <Container maxWidth={false} disableGutters>
         <Box className={classes.appBackground} mb={7}>
           <Nav classes={classes} content={content}/>
-          <Container disableGutters maxWidth="md">
-            <Box className={classes.heroContent} p={7} mr={2} ml={2}>
-              <Box mb={2}>
-                <Typography
-                  className={classes.h1}
-                  component="h1"
-                  variant="h1"
-                  align="left"
-                >
-                  Heading
-                </Typography>
-              </Box>
-              <Box mb={2}>
-                <Typography component="p" variant="h4">
-                  This is going to be the subheading
-                </Typography>
-              </Box>
-              <Box mb={2}>
-                <Typography className={classes.heroButton}>
-                  <Link className={classes.linkButton} href="#">
-                    CONTACT
-                  </Link>
-                </Typography>
-              </Box>
-            </Box>
-          </Container>
+          <Hero classes={classes} content={content}/>
         </Box>
 
         <Container maxWidth="md">

@@ -7,6 +7,11 @@
             "contact": "Contact"
         }
     },
+    "hero": {
+        "title": "Heading",
+        "description": "This is going to be the subheading",
+        "link": "CONTACT"
+    },
   "about": {
     "title": "About Camy",
     "description": "There is no denying the fact that the success of an advertisement lies mostly in the headline. The headline should attract the reader and make him read the rest of the advertisement. The headline should be simply catchy and various key points should be embedded when deciding on the headline for the ad."
