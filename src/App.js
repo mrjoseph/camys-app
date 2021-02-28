@@ -21,6 +21,7 @@ import CardContainer from "./components/cardContainer";
 import useStyles from "./styles.js";
 import About from "./components/about";
 import Contact from "./components/contact";
+import Nav from "./components/nav";
 // import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 
 const App = () => {
@@ -44,38 +45,11 @@ const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
       <main className={classes.container}>
-        {/* Hero unit */}
         <CssBaseline />
       </main>
       <Container maxWidth={false} disableGutters>
         <Box className={classes.appBackground} mb={7}>
-          <Box pt={2} pb={2} pr={2} pl={2}>
-            <Container disableGutters maxWidth="md" className={classes.appBar}>
-              <Grid direction="row" md={6} sm={12}>
-                <Grid item>
-                  <Typography className={classes.logo}>CR/</Typography>
-                </Grid>
-              </Grid>
-              <Grid
-                container
-                direction="row"
-                justify="flex-end"
-                spacing={2}
-                md={6}
-                sm={12}
-              >
-                <Grid item>
-                  <Link href="#">Services</Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#">About</Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#">Contact</Link>
-                </Grid>
-              </Grid>
-            </Container>
-          </Box>
+          <Nav classes={classes} content={content}/>
           <Container disableGutters maxWidth="md">
             <Box className={classes.heroContent} p={7} mr={2} ml={2}>
               <Box mb={2}>
@@ -105,11 +79,7 @@ const App = () => {
         </Box>
 
         <Container maxWidth="md">
-          <Box mb={7}>
-            <Typography component="h2" variant="h3">
-              This is going to be the h2
-            </Typography>
-          </Box>
+          <Box mb={7}></Box>
           <Box mb={7}>
             <CardContainer classes={classes} theme={theme} content={content} />
           </Box>
