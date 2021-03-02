@@ -1,4 +1,13 @@
 {
+  "head": {
+    "title": "This is your title",
+    "metaContent": [
+      {
+        "name": "name of meta tag",
+        "content": "content in meta tag"
+      }
+    ]
+  },
   "navigation": {
     "heading": "CR/",
     "links": {

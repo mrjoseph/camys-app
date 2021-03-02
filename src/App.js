@@ -1,18 +1,8 @@
 import React from "react";
-// import AppBar from "@material-ui/core/AppBar";
-// import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-// import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
+import { Helmet } from "react-helmet";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-// import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 import { createMuiTheme } from "@material-ui/core/styles";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import content from "./content.json";
@@ -43,8 +33,16 @@ const App = () => {
       },
     },
   });
+
+  const { title, metaContent } = content.head;
   return (
     <MuiThemeProvider theme={theme}>
+      <Helmet>
+        <title>{title}</title>
+        {metaContent.map(({ name, content }) => {
+          return <meta name={name} content={content} />;
+        })}
+      </Helmet>
       <main className={classes.container}>
         <CssBaseline />
       </main>
