@@ -3,13 +3,13 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
+
+import { HashLink as Link } from "react-router-hash-link";
 
 const Nav = ({ classes, content }) => {
-    const { navigation: {
-        heading,
-        links
-    } } = content;
+  const {
+    navigation: { heading, links },
+  } = content;
   return (
     <Box pt={2} pb={2} pr={2} pl={2}>
       <Container disableGutters maxWidth="md" className={classes.appBar}>
@@ -27,13 +27,13 @@ const Nav = ({ classes, content }) => {
           sm={12}
         >
           <Grid item>
-            <Link href="#">{links.services}</Link>
+            <Link to="#services">{links.services}</Link>
           </Grid>
           <Grid item>
-            <Link href="#">{links.about}</Link>
+            <Link to="#about">{links.about}</Link>
           </Grid>
           <Grid item>
-            <Link href="#">{links.contact}</Link>
+            <Link to="#contact">{links.contact}</Link>
           </Grid>
         </Grid>
       </Container>
